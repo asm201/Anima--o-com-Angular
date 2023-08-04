@@ -15,3 +15,30 @@ export const highligthedStateTrigger = trigger('highligthedState', [
     animate(200)
   ])
 ])
+
+export const shownStateTrigger = trigger('shownState',[
+  //transition('void => *', [
+  transition(':enter', [
+    style({
+      opacity: 0
+    }),
+    animate(300, style({
+      opacity: 1
+    }))
+  ]),
+  //transition('* => void', [
+  transition(':leave', [
+    animate(300, style({
+      opacity: 0
+    }))
+  ])
+])
+
+export const checkButtonTrigger = trigger('checkButton', [
+  transition('* => checked', [
+    animate('400ms ease-in', style({
+      transform: 'scale(0.4)',
+    })),
+  ]),
+])
+
